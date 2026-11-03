@@ -28,7 +28,7 @@ POLYGON_FILE = (
     "perimeter.geojson"  # Polygon / MultiPolygon / Feature / FeatureCollection
 )
 SEARCH_RADIUS = 200  # radius (m) of each search circle; smaller = fewer missed places
-OUTPUT_DIR = "user_photos_with_metadata"
+OUTPUT_DIR = "user_photos"
 TIMEOUT = 20
 
 NEARBY_URL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
@@ -144,7 +144,7 @@ def download_photo(photo, place, index, api_key):
     r = requests.get(
         PHOTO_URL,
         params={
-            "maxwidth": 400,
+            "maxwidth": 6000,
             "photoreference": photo["photo_reference"],
             "key": api_key,
         },

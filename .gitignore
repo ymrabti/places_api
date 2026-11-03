@@ -1,3 +1,4 @@
 *.zip
 user_photos*
 secret.json
+places.geojson

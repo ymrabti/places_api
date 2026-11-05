@@ -1,7 +1,7 @@
 """
 Merge the per-photo metadata JSON files into a single GeoJSON file.
 
-Every ``photo_<n>.json`` in ``user_photos_with_metadata/`` becomes one Point
+Every ``photo_<n>.json`` in ``user_photos/`` becomes one Point
 feature. ``latest_review_relative_time`` ("4 months ago", "a year ago", ...)
 is converted to an approximate absolute timestamp: Google expressed that value
 relative to the moment the API was called, so each file's modification time is
@@ -28,7 +28,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 # 1. Configuration
-INPUT_DIR = "user_photos_with_metadata"
+INPUT_DIR = "user_photos"
 OUTPUT_FILE = "places.geojson"
 
 NAME_RE = re.compile(r"photo_(\d+)\.json$")
